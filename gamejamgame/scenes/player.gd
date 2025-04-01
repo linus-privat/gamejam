@@ -25,9 +25,9 @@ func player_movement(delta):
 				velocity = Vector2.ZERO
 		else:
 			moving = true
+			set_facing(input)
 			velocity += (input * acceleration)
 			velocity = velocity.limit_length(max_speed)
-		set_facing(input)
 		move_and_slide()
 		
 		if moving:
@@ -53,9 +53,9 @@ func player_animation_walk(dir):
 		DOWN:
 			animation_player.play("p-walk")
 		LEFT:
-			animation_player.play("p-walk-left")
+			animation_player.play("p-walk-left-down")
 		RIGHT:
-			animation_player.play("p-walk-right")
+			animation_player.play("p-walk-right-down")
 		
 func set_facing(direction: Vector2) -> void:
 	if not moving:
