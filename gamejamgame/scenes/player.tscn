@@ -154,3 +154,8 @@ libraries = {
 position = Vector2(8, 3)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_qhqgy")
+
+[node name="ShootStartPosition" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="ShootStartPosition"]
+position = Vector2(13, 1)

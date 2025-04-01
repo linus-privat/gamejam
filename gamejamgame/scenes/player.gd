@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal shoot(pos, input)
+
 enum {LEFT, RIGHT, UP, DOWN}
 const max_speed = 600
 const acceleration = 2300
@@ -13,7 +15,14 @@ var moving = false
 
 
 func _physics_process(delta):
+	# movement
 	player_movement(delta)
+	
+	# shoot input
+	if Input.is_action_just_pressed("shoot"):
+		var pos = $ShootStartPosition/Marker2D.global_position
+		print('shoot')
+		shoot.emit(pos, input)
 	
 func player_movement(delta):
 		input = Input.get_vector("walk left", "walk right", "walk up", "walk down")		
