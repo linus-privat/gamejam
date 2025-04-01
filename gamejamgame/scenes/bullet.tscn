@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5r2nmvlogae"]
+
+[ext_resource type="Texture2D" uid="uid://doiorbev68bwm" path="res://assets/characters/items/guns/free-guns-pixel-art/free-guns-pixel-art/AmoB1.png" id="1_mkf8s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y25gk"]
+
+[node name="Bullet" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mkf8s")
