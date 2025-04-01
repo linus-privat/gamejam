@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3gkkc8w33sr5"]
-
-[ext_resource type="Texture2D" uid="uid://dg7j6eaeg1mfc" path="res://assets/characters/wizard2.png" id="1_tohej"]
-
-[node name="Malte" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tohej")
