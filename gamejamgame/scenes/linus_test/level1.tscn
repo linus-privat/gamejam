@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgekm5esv545c"]
+
+[ext_resource type="PackedScene" uid="uid://bq5i78yipkdi8" path="res://scenes/linus_test/level_parent.tscn" id="1_rcrrn"]
+
+[node name="LevelParent" instance=ExtResource("1_rcrrn")]
