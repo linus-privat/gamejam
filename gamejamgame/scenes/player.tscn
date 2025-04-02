@@ -588,7 +588,9 @@ position = Vector2(8, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_qhqgy")
 
-[node name="ShootStartPosition" type="Node2D" parent="Node2D"]
+[node name="ShootStartPosition" type="Node2D" parent="Node2D/GunSprite"]
+position = Vector2(-26.6667, 0)
+scale = Vector2(3.33333, 3.33333)
 
-[node name="Marker2D" type="Marker2D" parent="Node2D/ShootStartPosition"]
+[node name="Marker2D" type="Marker2D" parent="Node2D/GunSprite/ShootStartPosition"]
 position = Vector2(12, -1.5)

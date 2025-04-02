@@ -8,7 +8,7 @@ const acceleration = 1800
 const friction = 1800
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var shoot_marker = $Node2D/ShootStartPosition/Marker2D
+@onready var shoot_marker = $Node2D/GunSprite/ShootStartPosition/Marker2D
 
 var input = Vector2.ZERO
 var facing = DOWN
