@@ -20,3 +20,6 @@ func _on_player_shoot(pos_r,pos_l, direction: Vector2) -> void:
 	
 	addtime.emit(10)
 	
+func scene_transition(scene):
+	return
+	
