@@ -15,4 +15,3 @@ tile_map_data = PackedByteArray("AAD//x4AAAABAAEAAAD//x0AAAABAAEAAAD//xwAAAAAAAc
 
 [node name="Mage" parent="." index="5" instance=ExtResource("3_pgq8h")]
 position = Vector2(401, 262)
-collision_layer = 1

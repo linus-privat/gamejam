@@ -19,6 +19,9 @@ var shoot_dir
 
 
 func _physics_process(delta):
+	# GLobal
+	Globals.player_pos = global_position
+	
 	# movement
 	player_movement(delta)
 	mouse_pos = get_global_mouse_position()
