@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bq5i78yipkdi8"]
+[gd_scene load_steps=15 format=3 uid="uid://bq5i78yipkdi8"]
 
 [ext_resource type="Script" uid="uid://bho7qylxxdbrl" path="res://scenes/linus_test/level_parent.gd" id="1_pwxm5"]
 [ext_resource type="Texture2D" uid="uid://edmutehi7y25" path="res://assets/map/Texture/TX Tileset Grass.png" id="2_hlse6"]
 [ext_resource type="Texture2D" uid="uid://dm3ma3l5elt1i" path="res://assets/map/Texture/TX Tileset Stone Ground.png" id="3_kbq43"]
 [ext_resource type="Texture2D" uid="uid://dfaqy5mgd2k6g" path="res://assets/map/Texture/TX Tileset Wall.png" id="4_23dia"]
+[ext_resource type="Texture2D" uid="uid://flciw2ptw8uc" path="res://assets/map/Texture/TX Props.png" id="5_hlse6"]
 [ext_resource type="PackedScene" uid="uid://sdpn7hb7m7lq" path="res://scenes/player.tscn" id="5_mj537"]
 [ext_resource type="PackedScene" uid="uid://b2jhamr0lhxej" path="res://scenes/ui/canvas_layer.tscn" id="6_wjrd5"]
 
@@ -1197,6 +1198,10 @@ texture_region_size = Vector2i(32, 32)
 7:7/0/terrains_peering_bit/left_side = 0
 7:7/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbq43"]
+texture = ExtResource("5_hlse6")
+texture_region_size = Vector2i(32, 32)
+
 [sub_resource type="TileSet" id="TileSet_mff7h"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
@@ -1204,6 +1209,7 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Stone"
 terrain_set_0/terrain_0/color = Color(0.281187, 0.281187, 0.281187, 1)
 sources/0 = SubResource("TileSetAtlasSource_xx1wl")
+sources/1 = SubResource("TileSetAtlasSource_kbq43")
 
 [node name="LevelParent" type="Node2D"]
 script = ExtResource("1_pwxm5")
