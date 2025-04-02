@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bq5i78yipkdi8" path="res://scenes/level/level_parent.tscn" id="1_rcrrn"]
 [ext_resource type="Script" uid="uid://dneei4n3tldsf" path="res://scenes/level/level_1.gd" id="2_lm0m4"]
 [ext_resource type="Texture2D" uid="uid://cgcoe3l02845q" path="res://icon.svg" id="3_pgq8h"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dtg5v5ivr5ylh" path="res://scenes/player/mage.tscn" id="4_5yh3o"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/player/mage.tscn" id="4_5yh3o"]
+>>>>>>> 3adc454538f294d156423078413f1a2fd67c9d8f
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvmle"]
 size = Vector2(67, 53)
@@ -30,5 +34,8 @@ shape = SubResource("RectangleShape2D_gvmle")
 position = Vector2(767, 258)
 scale = Vector2(0.5, 0.375)
 texture = ExtResource("3_pgq8h")
+
+[node name="Mage" parent="." index="6" instance=ExtResource("4_5yh3o")]
+position = Vector2(754, 145)
 
 [connection signal="body_entered" from="Area2D" to="." method="scene_transition"]
