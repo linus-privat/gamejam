@@ -1890,3 +1890,7 @@ position = Vector2(12, -1.5)
 
 [node name="MarkerLeft" type="Marker2D" parent="Node2D/GunSprite/ShootStartPosition"]
 position = Vector2(12, 1.5)
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
