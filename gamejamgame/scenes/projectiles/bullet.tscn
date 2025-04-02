@@ -22,3 +22,7 @@ shape = SubResource("CapsuleShape2D_y25gk")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_mkf8s")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
