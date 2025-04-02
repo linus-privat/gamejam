@@ -7,15 +7,19 @@ const max_speed = 200
 const acceleration = 1800
 const friction = 1800
 
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var shoot_marker_right = $Node2D/GunSprite/ShootStartPosition/MarkerRight
 @onready var shoot_marker_left = $Node2D/GunSprite/ShootStartPosition/MarkerLeft
+@onready var shoot_timer = $ShootTimer
 
 var input = Vector2.ZERO
 var facing = DOWN
 var moving = false
-var mouse_pos
-var shoot_dir
+var mouse_pos = Vector2.ZERO
+var shoot_dir = Vector2.ZERO
+var shoot_timeout = false
+var firerate = 2
 
 
 func _physics_process(delta):
@@ -33,11 +37,15 @@ func _physics_process(delta):
 	$Node2D.look_at(shoot_dir+global_position)
 	
 	# shoot input
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		var pos_right = shoot_marker_right.global_position
 		var pos_left = shoot_marker_left.global_position
-		print('shoot')
-		shoot.emit(pos_right,pos_left, shoot_dir)
+		if not shoot_timeout:
+			shoot.emit(pos_right,pos_left, shoot_dir)
+			shoot_timeout = true
+			shoot_timer.start(firerate)
+			print('shoot')
+		
 	
 func player_movement(delta):
 		input = Input.get_vector("walk left", "walk right", "walk up", "walk down")		
@@ -122,4 +130,5 @@ func set_facing(direction: Vector2) -> void:
 			facing = RIGHTUP
 
 
-				
+func _on_shoot_timer_timeout() -> void:
+	shoot_timeout = false
