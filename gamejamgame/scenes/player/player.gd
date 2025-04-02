@@ -19,7 +19,7 @@ var moving = false
 var mouse_pos = Vector2.ZERO
 var shoot_dir = Vector2.ZERO
 var shoot_timeout = false
-var firerate = 2
+var firerate = 0.01
 
 
 func _physics_process(delta):
