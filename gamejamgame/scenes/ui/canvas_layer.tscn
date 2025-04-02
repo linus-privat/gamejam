@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2jhamr0lhxej"]
+
+[ext_resource type="Script" uid="uid://dw8bs1oj8u31s" path="res://scenes/ui/canvas_layer.gd" id="1_nbmk3"]
+[ext_resource type="Script" uid="uid://bjrnduhp4enbg" path="res://scenes/ui/panel.gd" id="2_frscm"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_nbmk3")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 69.0
+offset_bottom = 24.0
+script = ExtResource("2_frscm")
+
+[node name="Hours" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 34.0
+offset_bottom = 23.0
+
+[node name="Minutes" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 59.0
+offset_bottom = 23.0
+
+[node name="Seconds" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 82.0
+offset_bottom = 23.0
+
+[node name="Msecs" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 23.0
