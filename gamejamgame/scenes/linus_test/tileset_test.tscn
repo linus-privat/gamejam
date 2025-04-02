@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bho7qylxxdbrl" path="res://scenes/linus_test/tileset_test.gd" id="1_mff7h"]
 [ext_resource type="Texture2D" uid="uid://dm3ma3l5elt1i" path="res://assets/map/Texture/TX Tileset Stone Ground.png" id="2_xx1wl"]
 [ext_resource type="Texture2D" uid="uid://dfaqy5mgd2k6g" path="res://assets/map/Texture/TX Tileset Wall.png" id="3_4ci2p"]
-[ext_resource type="PackedScene" uid="uid://dila4453vu4e1" path="res://scenes/player.tscn" id="5_6l8hh"]
+[ext_resource type="PackedScene" uid="uid://sdpn7hb7m7lq" path="res://scenes/player.tscn" id="5_6l8hh"]
 [ext_resource type="PackedScene" uid="uid://b2jhamr0lhxej" path="res://scenes/ui/canvas_layer.tscn" id="6_6l8hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ayw8"]
