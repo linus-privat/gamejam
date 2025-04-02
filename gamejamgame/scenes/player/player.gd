@@ -100,16 +100,26 @@ func player_animation_walk(dir):
 func set_facing(direction: Vector2) -> void:
 	if not moving:
 		return
-	if abs(direction.x) >= abs(direction.y):
-		if direction.x > 0:
+	var dir = direction.normalized()
+	var rounded = Vector2(round(dir.x), round(dir.y))
+
+	match rounded:
+		Vector2(1, 0):
 			facing = RIGHT
-			return
-		facing = LEFT
-		return
-	if direction.y < 0:
-		facing = UP
-		return
-	facing = DOWN
+		Vector2(1, 1):
+			facing = RIGHTDOWN
+		Vector2(0, 1):
+			facing = DOWN
+		Vector2(-1, 1):
+			facing = LEFTDOWN
+		Vector2(-1, 0):
+			facing = LEFT
+		Vector2(-1, -1):
+			facing = LEFTUP
+		Vector2(0, -1):
+			facing = UP
+		Vector2(1, -1):
+			facing = RIGHTUP
 
 
 				
