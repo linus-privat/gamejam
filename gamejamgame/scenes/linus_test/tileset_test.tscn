@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://bq5i78yipkdi8"]
+[gd_scene load_steps=13 format=4 uid="uid://bq5i78yipkdi8"]
 
 [ext_resource type="Texture2D" uid="uid://edmutehi7y25" path="res://assets/map/Texture/TX Tileset Grass.png" id="1_1ayw8"]
 [ext_resource type="Script" uid="uid://bho7qylxxdbrl" path="res://scenes/linus_test/tileset_test.gd" id="1_mff7h"]
 [ext_resource type="Texture2D" uid="uid://dm3ma3l5elt1i" path="res://assets/map/Texture/TX Tileset Stone Ground.png" id="2_xx1wl"]
 [ext_resource type="Texture2D" uid="uid://dfaqy5mgd2k6g" path="res://assets/map/Texture/TX Tileset Wall.png" id="3_4ci2p"]
 [ext_resource type="PackedScene" uid="uid://dila4453vu4e1" path="res://scenes/player.tscn" id="5_6l8hh"]
+[ext_resource type="PackedScene" uid="uid://b2jhamr0lhxej" path="res://scenes/ui/canvas_layer.tscn" id="6_6l8hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ayw8"]
 texture = ExtResource("1_1ayw8")
@@ -1172,4 +1173,7 @@ position = Vector2(143, 133)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
+[node name="CanvasLayer" parent="." instance=ExtResource("6_6l8hh")]
+
+[connection signal="addtime" from="." to="CanvasLayer" method="_on_tileset_test_addtime"]
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]

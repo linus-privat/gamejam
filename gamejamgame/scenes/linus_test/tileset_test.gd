@@ -2,6 +2,8 @@ extends Node2D
 
 class_name LevelParent
 
+signal addtime(seconds)
+
 var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
 
 func _on_player_shoot(pos, input) -> void:
@@ -11,3 +13,6 @@ func _on_player_shoot(pos, input) -> void:
 	print(input)
 	
 	$Projectiles.add_child(bullet)
+	
+	addtime.emit(10)
+	
