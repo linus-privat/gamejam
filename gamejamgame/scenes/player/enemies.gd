@@ -4,7 +4,7 @@ class_name EnemieParent
 
 var active: bool = false
 var speed: int = 0
-var max_speed: int = 200
+var max_speed: int = 100
 var speed_multiplier: int = 1
 
 func _process(delta: float) -> void:

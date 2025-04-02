@@ -1,14 +1,129 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtg5v5ivr5ylh"]
+[gd_scene load_steps=24 format=3 uid="uid://dtg5v5ivr5ylh"]
 
 [ext_resource type="PackedScene" uid="uid://def0fwj883mo5" path="res://scenes/player/Enemies.tscn" id="1_85jc8"]
 [ext_resource type="Texture2D" uid="uid://b0c0hxsnu4fs1" path="res://assets/characters/enemys/Demons/Mage/Mage_.png" id="1_v3bfl"]
 [ext_resource type="Script" uid="uid://bo53tq5ywi2xn" path="res://scenes/player/mage.gd" id="2_gqmpc"]
+[ext_resource type="Texture2D" uid="uid://b83rj3gachcm5" path="res://assets/characters/enemys/Demons/Mage/mage_atk2.png" id="4_4q7pk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gqmpc"]
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4q7pk"]
-radius = 141.128
+radius = 223.397
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnjt"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkn1a"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufbue"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am1lp"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5eec"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vc3l"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(640, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n31fr"]
+atlas = ExtResource("1_v3bfl")
+region = Rect2(768, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd3ju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkn1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufbue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am1lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5eec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vc3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n31fr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnjt"]
+radius = 19.0003
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qllo"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoiuw"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n13hi"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xybd"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtd83"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugri3"]
+atlas = ExtResource("4_4q7pk")
+region = Rect2(640, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj3tj"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_6qllo")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_yoiuw")
+}, {
+"duration": 2.4,
+"texture": SubResource("AtlasTexture_n13hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xybd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtd83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugri3")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvb2a"]
+radius = 8.0
+height = 44.0
 
 [node name="Mage" instance=ExtResource("1_85jc8")]
 script = ExtResource("2_gqmpc")
@@ -17,9 +132,32 @@ script = ExtResource("2_gqmpc")
 shape = SubResource("CircleShape2D_gqmpc")
 
 [node name="CollisionShape2D" parent="NoticeArea" index="0"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_4q7pk")
 
-[node name="Sprite2D" parent="." index="2"]
-texture = ExtResource("1_v3bfl")
-hframes = 10
-vframes = 6
+[node name="Movement" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(29, -6)
+sprite_frames = SubResource("SpriteFrames_nd3ju")
+animation = &"idle"
+
+[node name="AttackTrigger" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackTrigger" index="0"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_cvnjt")
+
+[node name="DamageArea" type="Area2D" parent="." index="4"]
+
+[node name="Attack" type="AnimatedSprite2D" parent="DamageArea" index="0"]
+sprite_frames = SubResource("SpriteFrames_cj3tj")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" index="1"]
+position = Vector2(0, 7)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fvb2a")
+
+[connection signal="body_entered" from="AttackTrigger" to="." method="_on_attack_trigger_body_entered"]
+[connection signal="body_exited" from="AttackTrigger" to="." method="_on_attack_trigger_body_exited"]

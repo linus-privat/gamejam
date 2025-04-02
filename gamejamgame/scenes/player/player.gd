@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal shoot(pos_r,pos_l, direction)
 
