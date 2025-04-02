@@ -66,6 +66,14 @@ func player_animation_idle(dir):
 			animated_sprite.play("p-idle-left-down")
 		RIGHT:
 			animated_sprite.play("p-idle-right-down")
+		LEFTUP:
+			animated_sprite.play("p-idle-left-up")
+		LEFTDOWN:
+			animated_sprite.play("p-idle-left-down")
+		RIGHTUP:
+			animated_sprite.play("p-idle-right-up")
+		RIGHTDOWN:
+			animated_sprite.play("p-idle-right-down")
 
 func player_animation_walk(dir):
 	match facing:
@@ -76,6 +84,14 @@ func player_animation_walk(dir):
 		LEFT:
 			animated_sprite.play("p-walk-left-down")
 		RIGHT:
+			animated_sprite.play("p-walk-right-down")
+		LEFTUP:
+			animated_sprite.play("p-walk-left-up")
+		LEFTDOWN:
+			animated_sprite.play("p-walk-left-down")
+		RIGHTUP:
+			animated_sprite.play("p-walk-right-up")
+		RIGHTDOWN:
 			animated_sprite.play("p-walk-right-down")
 		
 func set_facing(direction: Vector2) -> void:
