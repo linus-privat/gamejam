@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtg5v5ivr5ylh"]
+
+[ext_resource type="PackedScene" uid="uid://def0fwj883mo5" path="res://scenes/player/Enemies.tscn" id="1_85jc8"]
+[ext_resource type="Texture2D" uid="uid://b0c0hxsnu4fs1" path="res://assets/characters/enemys/Demons/Mage/Mage_.png" id="1_v3bfl"]
+[ext_resource type="Script" uid="uid://bo53tq5ywi2xn" path="res://scenes/player/mage.gd" id="2_gqmpc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqmpc"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4q7pk"]
+radius = 141.128
+
+[node name="Mage" instance=ExtResource("1_85jc8")]
+script = ExtResource("2_gqmpc")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_gqmpc")
+
+[node name="CollisionShape2D" parent="NoticeArea" index="0"]
+shape = SubResource("CircleShape2D_4q7pk")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("1_v3bfl")
+hframes = 10
+vframes = 6
