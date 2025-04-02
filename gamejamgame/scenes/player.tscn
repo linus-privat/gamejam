@@ -591,4 +591,4 @@ texture = ExtResource("3_qhqgy")
 [node name="ShootStartPosition" type="Node2D" parent="Node2D"]
 
 [node name="Marker2D" type="Marker2D" parent="Node2D/ShootStartPosition"]
-position = Vector2(13, -2)
+position = Vector2(12, -1.5)

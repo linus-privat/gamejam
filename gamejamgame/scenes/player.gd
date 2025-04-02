@@ -22,7 +22,10 @@ func _physics_process(delta):
 	player_movement(delta)
 	mouse_pos = get_global_mouse_position()
 	shoot_dir = (mouse_pos-global_position).normalized()
-	print(shoot_dir)
+	if shoot_dir.x < 0:
+		$Node2D/GunSprite.flip_v = true
+	else:
+		$Node2D/GunSprite.flip_v = false
 	$Node2D.look_at(shoot_dir+global_position)
 	
 	# shoot input

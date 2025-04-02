@@ -6,6 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y25gk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y25gk"]
+radius = 7.5
 
 [node name="Bullet" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_y25gk")
@@ -14,7 +15,9 @@ script = ExtResource("1_y25gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
+scale = Vector2(0.4, 0.4)
 shape = SubResource("CapsuleShape2D_y25gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_mkf8s")
