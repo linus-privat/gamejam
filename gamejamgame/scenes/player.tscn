@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://blgdam7ovlv7r" path="res://assets/characters/player/Death/death.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cptovc31mon30" path="res://assets/characters/player/Walk/walk.png" id="5_fjrip"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuyoq"]
+radius = 7.0
+height = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlfvf"]
 atlas = ExtResource("3_ur7pv")
@@ -1852,7 +1854,7 @@ animations = [{
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_u8vuu")
+shape = SubResource("CapsuleShape2D_tuyoq")
 
 [node name="Schatten" type="Sprite2D" parent="."]
 texture = ExtResource("2_dqkch")
@@ -1882,5 +1884,8 @@ texture = ExtResource("3_qhqgy")
 position = Vector2(-26.6667, 0)
 scale = Vector2(3.33333, 3.33333)
 
-[node name="Marker2D" type="Marker2D" parent="Node2D/GunSprite/ShootStartPosition"]
+[node name="MarkerRight" type="Marker2D" parent="Node2D/GunSprite/ShootStartPosition"]
 position = Vector2(12, -1.5)
+
+[node name="MarkerLeft" type="Marker2D" parent="Node2D/GunSprite/ShootStartPosition"]
+position = Vector2(12, 1.5)

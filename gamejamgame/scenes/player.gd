@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal shoot(pos, direction)
+signal shoot(pos_r,pos_l, direction)
 
 enum {LEFT,LEFTUP,LEFTDOWN, RIGHT, RIGHTUP, RIGHTDOWN, UP, DOWN}
 const max_speed = 200
@@ -8,7 +8,8 @@ const acceleration = 1800
 const friction = 1800
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var shoot_marker = $Node2D/GunSprite/ShootStartPosition/Marker2D
+@onready var shoot_marker_right = $Node2D/GunSprite/ShootStartPosition/MarkerRight
+@onready var shoot_marker_left = $Node2D/GunSprite/ShootStartPosition/MarkerLeft
 
 var input = Vector2.ZERO
 var facing = DOWN
@@ -30,9 +31,10 @@ func _physics_process(delta):
 	
 	# shoot input
 	if Input.is_action_just_pressed("shoot"):
-		var pos = shoot_marker.global_position
+		var pos_right = shoot_marker_right.global_position
+		var pos_left = shoot_marker_left.global_position
 		print('shoot')
-		shoot.emit(pos, shoot_dir)
+		shoot.emit(pos_right,pos_left, shoot_dir)
 	
 func player_movement(delta):
 		input = Input.get_vector("walk left", "walk right", "walk up", "walk down")		
