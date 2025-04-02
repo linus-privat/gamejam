@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://bq5i78yipkdi8"]
 
-[ext_resource type="Script" uid="uid://bho7qylxxdbrl" path="res://scenes/linus_test/level_parent.gd" id="1_pwxm5"]
+[ext_resource type="Script" uid="uid://bho7qylxxdbrl" path="res://scenes/level/level_parent.gd" id="1_pwxm5"]
 [ext_resource type="Texture2D" uid="uid://edmutehi7y25" path="res://assets/map/Texture/TX Tileset Grass.png" id="2_hlse6"]
 [ext_resource type="Texture2D" uid="uid://dm3ma3l5elt1i" path="res://assets/map/Texture/TX Tileset Stone Ground.png" id="3_kbq43"]
 [ext_resource type="Texture2D" uid="uid://dfaqy5mgd2k6g" path="res://assets/map/Texture/TX Tileset Wall.png" id="4_23dia"]
 [ext_resource type="Texture2D" uid="uid://flciw2ptw8uc" path="res://assets/map/Texture/TX Props.png" id="5_hlse6"]
-[ext_resource type="PackedScene" uid="uid://sdpn7hb7m7lq" path="res://scenes/player.tscn" id="5_mj537"]
+[ext_resource type="PackedScene" uid="uid://sdpn7hb7m7lq" path="res://scenes/player/player.tscn" id="5_mj537"]
 [ext_resource type="PackedScene" uid="uid://b2jhamr0lhxej" path="res://scenes/ui/canvas_layer.tscn" id="6_wjrd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ayw8"]

@@ -4,7 +4,7 @@ class_name LevelParent
 
 signal addtime(seconds)
 
-var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
+var bullet_scene: PackedScene = preload("res://scenes/projectiles/bullet.tscn")
 
 func _on_player_shoot(pos_r,pos_l, direction: Vector2) -> void:
 	var bullet = bullet_scene.instantiate() as RigidBody2D

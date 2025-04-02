@@ -1,6 +1,6 @@
 [gd_scene load_steps=253 format=3 uid="uid://sdpn7hb7m7lq"]
 
-[ext_resource type="Script" uid="uid://b88yf4xkfrd5w" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://b88yf4xkfrd5w" path="res://scenes/player/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://cnsi2y1hs3ykj" path="res://assets/characters/player/Shadow.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://darn16ylkxkyt" path="res://assets/characters/items/guns/free-guns-pixel-art/free-guns-pixel-art/Pistol-3.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cw2h8vt05ylw7" path="res://assets/characters/player/Death_Shadow/death_normal.png" id="3_ur7pv"]

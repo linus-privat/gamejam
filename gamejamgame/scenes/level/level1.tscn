@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://cgekm5esv545c"]
 
-[ext_resource type="PackedScene" uid="uid://bq5i78yipkdi8" path="res://scenes/linus_test/level_parent.tscn" id="1_rcrrn"]
-[ext_resource type="Script" uid="uid://dneei4n3tldsf" path="res://scenes/linus_test/level_1.gd" id="2_lm0m4"]
+[ext_resource type="PackedScene" uid="uid://bq5i78yipkdi8" path="res://scenes/level/level_parent.tscn" id="1_rcrrn"]
+[ext_resource type="Script" uid="uid://dneei4n3tldsf" path="res://scenes/level/level_1.gd" id="2_lm0m4"]
 
 [node name="Level1" instance=ExtResource("1_rcrrn")]
 script = ExtResource("2_lm0m4")
