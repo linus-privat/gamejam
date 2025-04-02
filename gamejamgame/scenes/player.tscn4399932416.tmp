@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dila4453vu4e1"]
+[gd_scene load_steps=108 format=3 uid="uid://dila4453vu4e1"]
 
 [ext_resource type="Script" uid="uid://b88yf4xkfrd5w" path="res://scenes/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://cnsi2y1hs3ykj" path="res://assets/characters/player/Shadow.png" id="2_dqkch"]
@@ -561,6 +561,198 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_dqkch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Partikel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a38lo"]
+resource_name = "p-dash"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Partikel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_4ni07"]
+resource_name = "p-dash-left-down"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Partikel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_l71n6"]
+resource_name = "p-dash-left-up"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Partikel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_31cv2"]
+resource_name = "p-dash-right-down"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_ujl30"]
+resource_name = "p-dash-right-up"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_ke2ow"]
+resource_name = "p-dash-up"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_a8ls1"]
+resource_name = "p-death"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_qfm1y"]
+resource_name = "p-death-down-left"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_fulsm"]
+resource_name = "p-death-left-up"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_i4ail"]
+resource_name = "p-death-right-down"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_60mlk"]
+resource_name = "p-death-right-up"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_4r5pv"]
+resource_name = "p-death-up"
+length = 0.75
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "p-idle"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_qlg0r"]
+resource_name = "p-idle-left-down"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_tuyoq"]
+resource_name = "p-idle-left-up"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_ur7pv"]
+resource_name = "p-idle-right-down"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "p-idle-right-up"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "p-idle-up"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_y4r1p"]
+resource_name = "p-walk"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_f1ej7"]
+resource_name = "p-walk-down-right"
+
+[sub_resource type="Animation" id="Animation_g2els"]
+resource_name = "p-walk-left-down"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_d2wvv"]
+resource_name = "p-walk-left-up"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_oprun"]
+resource_name = "p-walk-right-down"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_3v2ag"]
+resource_name = "p-walk-up"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_jej6c"]
+resource_name = "p-walk-up-right"
+length = 0.75
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
+_data = {
+&"RESET": SubResource("Animation_dqkch"),
+&"p-dash": SubResource("Animation_a38lo"),
+&"p-dash-left-down": SubResource("Animation_4ni07"),
+&"p-dash-left-up": SubResource("Animation_l71n6"),
+&"p-dash-right-down": SubResource("Animation_31cv2"),
+&"p-dash-right-up": SubResource("Animation_ujl30"),
+&"p-dash-up": SubResource("Animation_ke2ow"),
+&"p-death": SubResource("Animation_a8ls1"),
+&"p-death-left-down": SubResource("Animation_qfm1y"),
+&"p-death-left-up": SubResource("Animation_fulsm"),
+&"p-death-right-down": SubResource("Animation_i4ail"),
+&"p-death-right-up": SubResource("Animation_60mlk"),
+&"p-death-up": SubResource("Animation_4r5pv"),
+&"p-idle": SubResource("Animation_qhqgy"),
+&"p-idle-left-down": SubResource("Animation_qlg0r"),
+&"p-idle-left-up": SubResource("Animation_tuyoq"),
+&"p-idle-right-down": SubResource("Animation_ur7pv"),
+&"p-idle-right-up": SubResource("Animation_smehm"),
+&"p-idle-up": SubResource("Animation_fjrip"),
+&"p-walk": SubResource("Animation_y4r1p"),
+&"p-walk-down-right": SubResource("Animation_f1ej7"),
+&"p-walk-left-down": SubResource("Animation_g2els"),
+&"p-walk-left-up": SubResource("Animation_d2wvv"),
+&"p-walk-right-down": SubResource("Animation_oprun"),
+&"p-walk-up": SubResource("Animation_3v2ag"),
+&"p-walk-up-right": SubResource("Animation_jej6c")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
 
@@ -581,14 +773,16 @@ texture = ExtResource("4_qlg0r")
 hframes = 8
 vframes = 6
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y4r1p")
+}
 
-[node name="GunSprite" type="Sprite2D" parent="Node2D"]
+[node name="GunSprite" type="Sprite2D" parent="."]
 position = Vector2(8, 0)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("3_qhqgy")
 
-[node name="ShootStartPosition" type="Node2D" parent="Node2D"]
+[node name="ShootStartPosition" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Node2D/ShootStartPosition"]
-position = Vector2(13, -2)
+[node name="Marker2D" type="Marker2D" parent="ShootStartPosition"]

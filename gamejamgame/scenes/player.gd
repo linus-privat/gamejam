@@ -1,28 +1,35 @@
 extends CharacterBody2D
 
-signal shoot(pos, input)
+signal shoot(pos, direction)
 
-enum {LEFT, RIGHT, UP, DOWN}
-const max_speed = 600
-const acceleration = 2300
+enum {LEFT,LEFTUP,LEFTDOWN, RIGHT, RIGHTUP, RIGHTDOWN, UP, DOWN}
+const max_speed = 200
+const acceleration = 1800
 const friction = 1800
 
-@onready var animation_player = $AnimationPlayer
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var shoot_marker = $Node2D/ShootStartPosition/Marker2D
 
 var input = Vector2.ZERO
 var facing = DOWN
 var moving = false
+var mouse_pos
+var shoot_dir
 
 
 func _physics_process(delta):
 	# movement
 	player_movement(delta)
+	mouse_pos = get_global_mouse_position()
+	shoot_dir = (mouse_pos-global_position).normalized()
+	print(shoot_dir)
+	$Node2D.look_at(shoot_dir+global_position)
 	
 	# shoot input
 	if Input.is_action_just_pressed("shoot"):
-		var pos = $ShootStartPosition/Marker2D.global_position
+		var pos = shoot_marker.global_position
 		print('shoot')
-		shoot.emit(pos, input)
+		shoot.emit(pos, shoot_dir)
 	
 func player_movement(delta):
 		input = Input.get_vector("walk left", "walk right", "walk up", "walk down")		
@@ -47,24 +54,24 @@ func player_movement(delta):
 func player_animation_idle(dir):
 	match facing:
 		UP:
-			animation_player.play("p-idle-up")
+			animated_sprite.play("p-idle-up")
 		DOWN:
-			animation_player.play("p-idle")
+			animated_sprite.play("p-idle")
 		LEFT:
-			animation_player.play("p-idle-left")
+			animated_sprite.play("p-idle-left-down")
 		RIGHT:
-			animation_player.play("p-idle-right")
+			animated_sprite.play("p-idle-right-down")
 
 func player_animation_walk(dir):
 	match facing:
 		UP:
-			animation_player.play("p-walk-up")
+			animated_sprite.play("p-walk-up")
 		DOWN:
-			animation_player.play("p-walk")
+			animated_sprite.play("p-walk")
 		LEFT:
-			animation_player.play("p-walk-left-down")
+			animated_sprite.play("p-walk-left-down")
 		RIGHT:
-			animation_player.play("p-walk-right-down")
+			animated_sprite.play("p-walk-right-down")
 		
 func set_facing(direction: Vector2) -> void:
 	if not moving:
